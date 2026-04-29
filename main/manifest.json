@@ -1,5 +1,5 @@
 {
-  "manifest_version":2,
+  "manifest_version":3,
   "version":"1.0",
   "name":"Test",
   "content_scripts":[
@@ -7,5 +7,25 @@
      "matches":["<all_urls>"],
      "js":["main.js"]
     }
+  ],
+  
+  "//note": "tells the content script about the .jpg file",
+  "web_accessible_resources":[
+    {
+      "resources":["shrek_background.jpg"],
+      "matches":["<all_urls>"]
+    }
+  ],
+  "browser_action":{
+   "default_icon":{
+     "shrek1":"shrek_background.png",
+     "shrek1_again":"shrek_background.png"
+   }
+  },
+  "background":{
+        "scripts":["background.js"]
+  },
+  "permissions":[
+      "tabs"
   ]
 }
